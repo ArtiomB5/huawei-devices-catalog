@@ -26,19 +26,19 @@ test("should return action", () => {
     payload: "mainContent"
   });
 });
-test("should return action", () => {
+test("should return SHOW_DEVICES action for smartphones", () => {
   expect(all.SetVisibility("smartphones")).toEqual({
     type: "SHOW_DEVICES",
     payload: "smartphones"
   });
 });
-test("should return action", () => {
+test("should return SHOW_DEVICES action for tablets", () => {
   expect(all.SetVisibility("tablets")).toEqual({
     type: "SHOW_DEVICES",
     payload: "tablets"
   });
 });
-test("should return action", () => {
+test("should return SHOW_DEVICES action for laptops", () => {
   expect(all.SetVisibility("laptops")).toEqual({
     type: "SHOW_DEVICES",
     payload: "laptops"
@@ -47,52 +47,46 @@ test("should return action", () => {
 //SetVisibility test
 
 //CatalogLoaded test
-test("should return action", () => {
+test("should return LOADED action", () => {
   expect(all.CatalogLoaded(true)).toEqual({
     type: "LOADED",
     payload: true
   });
 });
-test("should return action", () => {
-  expect(all.CatalogLoaded(false)).toEqual({
-    type: "LOADED",
-    payload: false
-  });
-});
 //CatalogLoaded test
 
 //Show test
-test("should return action", () => {
+test("should return SHOW_CART action", () => {
   expect(all.Show("SHOW_CART")).toEqual({
     type: "SHOW_CART",
     payload: true
   });
 });
-test("should return action", () => {
+test("should return SHOW_COMPARISON action", () => {
   expect(all.Show("SHOW_COMPARISON")).toEqual({
     type: "SHOW_COMPARISON",
     payload: true
   });
 });
-test("should return action", () => {
+test("should return SHOW_DEVICE_FULL_INFO_CARD action", () => {
   expect(all.Show("SHOW_DEVICE_FULL_INFO_CARD")).toEqual({
     type: "SHOW_DEVICE_FULL_INFO_CARD",
     payload: true
   });
 });
-test("should return action", () => {
+test("should return SHOW_SEARCH action", () => {
   expect(all.Show("SHOW_SEARCH")).toEqual({
     type: "SHOW_SEARCH",
     payload: true
   });
 });
-test("should return action", () => {
+test("should return SHOW_LOGIN action", () => {
   expect(all.Show("SHOW_LOGIN")).toEqual({
     type: "SHOW_LOGIN",
     payload: true
   });
 });
-test("should return action", () => {
+test("should return SHOW_IMGS_GALLERY action", () => {
   expect(all.Show("SHOW_IMGS_GALLERY")).toEqual({
     type: "SHOW_IMGS_GALLERY",
     payload: true
@@ -112,7 +106,7 @@ test("should return new state", () => {
     mainContent: true
   });
 });
-test("should return new state", () => {
+test("should return new smartphones state", () => {
   initialState = {
     ...initialState,
     loading: false
@@ -132,7 +126,7 @@ test("should return new state", () => {
     gallery: false
   });
 });
-test("should return new state", () => {
+test("should return new tablets state", () => {
   initialState = {
     ...initialState,
     loading: false
@@ -152,7 +146,7 @@ test("should return new state", () => {
     gallery: false
   });
 });
-test("should return new state", () => {
+test("should return new laptops state", () => {
   initialState = {
     ...initialState,
     loading: false
@@ -172,14 +166,14 @@ test("should return new state", () => {
     gallery: false
   });
 });
-test("should return new state", () => {
+test("should return new loading state", () => {
   let action = all.CatalogLoaded(false);
   expect(all.visibilityReducer(initialState, action)).toEqual({
     ...initialState,
     loading: false
   });
 });
-test("should return new state", () => {
+test("should return new cart visibility state", () => {
   initialState = {
     ...initialState,
     loading: false
@@ -199,7 +193,7 @@ test("should return new state", () => {
     gallery: false
   });
 });
-test("should return new state", () => {
+test("should return new comparison visibility state", () => {
   initialState = {
     ...initialState,
     loading: false
@@ -219,7 +213,7 @@ test("should return new state", () => {
     gallery: false
   });
 });
-test("should return new state", () => {
+test("should return new deviceFullInfoCard visibility state", () => {
   initialState = {
     ...initialState,
     loading: false
@@ -239,7 +233,7 @@ test("should return new state", () => {
     gallery: false
   });
 });
-test("should return new state", () => {
+test("should return new serch visibility state", () => {
   initialState = {
     ...initialState,
     loading: false
